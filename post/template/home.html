@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+	{% for a in articles %}
+	<div class="index">
+		<span class="date">{{a.create}}</span>
+		<a href="/post/detail/?aid={{a.id}}">{{a.title}}</a>
+	</div>
+	{% endfor %}
+
+	<div>
+		{% for i in pages %}
+		<a href="/post/home/?page={{i}}">{{i}}</a>
+		{% endfor %}
+	</div>
+{% endblock %}
